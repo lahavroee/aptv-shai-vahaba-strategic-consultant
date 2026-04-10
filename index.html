@@ -1109,29 +1109,28 @@
     <nav class="navbar" id="navbar">
         <div class="navbar-inner">
             <a href="#" class="navbar-logo">
-                <svg class="navbar-logo-svg" viewBox="0 0 180 50" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Upward chart line -->
-                    <polyline points="42,38 56,22 68,30 88,8" stroke="#9ca3af" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <polyline points="82,14 88,8 94,14" stroke="#22a352" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <!-- APT text -->
-                    <text x="2" y="44" font-family="Heebo, Arial, sans-serif" font-weight="800" font-size="32" fill="#ffffff" letter-spacing="1">A</text>
-                    <text x="28" y="44" font-family="Heebo, Arial, sans-serif" font-weight="800" font-size="32" fill="#ffffff" letter-spacing="1">P</text>
-                    <text x="56" y="44" font-family="Heebo, Arial, sans-serif" font-weight="800" font-size="32" fill="#ffffff" letter-spacing="1">T</text>
-                    <!-- Dash -->
-                    <text x="82" y="44" font-family="Heebo, Arial, sans-serif" font-weight="800" font-size="32" fill="#ffffff">-</text>
-                    <!-- V in green -->
-                    <text x="96" y="44" font-family="Heebo, Arial, sans-serif" font-weight="800" font-size="32" fill="#22a352" letter-spacing="1">V</text>
-                    <!-- Glow effect on V -->
-                    <text x="96" y="44" font-family="Heebo, Arial, sans-serif" font-weight="800" font-size="32" fill="#22a352" letter-spacing="1" filter="url(#glow)">V</text>
+                <svg class="navbar-logo-svg" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                            <feGaussianBlur stdDeviation="3" result="blur"/>
-                            <feMerge>
-                                <feMergeNode in="blur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
+                        <filter id="glow-nav" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="2" result="blur"/>
+                            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
                         </filter>
                     </defs>
+                    <!-- Chart line: gray zigzag going up -->
+                    <polyline points="30,40 50,28 60,35 90,6" stroke="#9ca3af" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Green arrowhead -->
+                    <polygon points="90,6 82,12 86,6.5" fill="#22a352"/>
+                    <polygon points="90,6 90.5,15 86,6.5" fill="#22a352"/>
+                    <!-- A - geometric triangle -->
+                    <path d="M8,52 L18,28 L28,52 M12,44 L24,44" stroke="#ffffff" stroke-width="3.5" fill="none" stroke-linecap="square" stroke-linejoin="miter"/>
+                    <!-- P - geometric -->
+                    <path d="M38,52 L38,28 L54,28 L54,40 L38,40" stroke="#ffffff" stroke-width="3.5" fill="none" stroke-linecap="square" stroke-linejoin="miter"/>
+                    <!-- T -->
+                    <path d="M64,28 L84,28 M74,28 L74,52" stroke="#ffffff" stroke-width="3.5" fill="none" stroke-linecap="square"/>
+                    <!-- Dash -->
+                    <line x1="92" y1="42" x2="102" y2="42" stroke="#ffffff" stroke-width="3" stroke-linecap="square"/>
+                    <!-- V - green with glow -->
+                    <path d="M110,28 L122,52 L134,28" stroke="#22a352" stroke-width="4" fill="none" stroke-linecap="square" stroke-linejoin="miter" filter="url(#glow-nav)"/>
                 </svg>
             </a>
             <ul class="navbar-links" id="navLinks">
@@ -1527,14 +1526,15 @@
     <footer class="footer">
         <div class="footer-inner">
             <a href="#" class="navbar-logo" style="justify-content:center;">
-                <svg style="height:34px;" viewBox="0 0 180 50" xmlns="http://www.w3.org/2000/svg">
-                    <polyline points="42,38 56,22 68,30 88,8" stroke="#6b7280" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <polyline points="82,14 88,8 94,14" stroke="#22a352" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <text x="2" y="44" font-family="Heebo, Arial, sans-serif" font-weight="800" font-size="32" fill="rgba(255,255,255,0.5)" letter-spacing="1">A</text>
-                    <text x="28" y="44" font-family="Heebo, Arial, sans-serif" font-weight="800" font-size="32" fill="rgba(255,255,255,0.5)" letter-spacing="1">P</text>
-                    <text x="56" y="44" font-family="Heebo, Arial, sans-serif" font-weight="800" font-size="32" fill="rgba(255,255,255,0.5)" letter-spacing="1">T</text>
-                    <text x="82" y="44" font-family="Heebo, Arial, sans-serif" font-weight="800" font-size="32" fill="rgba(255,255,255,0.5)">-</text>
-                    <text x="96" y="44" font-family="Heebo, Arial, sans-serif" font-weight="800" font-size="32" fill="#22a352" letter-spacing="1">V</text>
+                <svg style="height:30px;" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                    <polyline points="30,40 50,28 60,35 90,6" stroke="#6b7280" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polygon points="90,6 82,12 86,6.5" fill="#22a352"/>
+                    <polygon points="90,6 90.5,15 86,6.5" fill="#22a352"/>
+                    <path d="M8,52 L18,28 L28,52 M12,44 L24,44" stroke="rgba(255,255,255,0.45)" stroke-width="3.5" fill="none" stroke-linecap="square" stroke-linejoin="miter"/>
+                    <path d="M38,52 L38,28 L54,28 L54,40 L38,40" stroke="rgba(255,255,255,0.45)" stroke-width="3.5" fill="none" stroke-linecap="square" stroke-linejoin="miter"/>
+                    <path d="M64,28 L84,28 M74,28 L74,52" stroke="rgba(255,255,255,0.45)" stroke-width="3.5" fill="none" stroke-linecap="square"/>
+                    <line x1="92" y1="42" x2="102" y2="42" stroke="rgba(255,255,255,0.45)" stroke-width="3" stroke-linecap="square"/>
+                    <path d="M110,28 L122,52 L134,28" stroke="#22a352" stroke-width="4" fill="none" stroke-linecap="square" stroke-linejoin="miter"/>
                 </svg>
             </a>
             <div class="footer-links">
