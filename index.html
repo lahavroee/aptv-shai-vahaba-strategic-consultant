@@ -250,6 +250,37 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
         }
+        .hero-waze-explain {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.2rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.5rem 1.2rem;
+            border: 1px solid rgba(200, 164, 92, 0.35);
+            border-radius: 50px;
+            background: rgba(200, 164, 92, 0.08);
+            transition: all 0.3s;
+        }
+        .hero-waze-explain:hover {
+            background: rgba(200, 164, 92, 0.2);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .hero-waze-explain-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--primary);
+            font-size: 0.6rem;
+        }
         .hero-stats {
             display: flex;
             justify-content: center;
@@ -1202,6 +1233,10 @@
                     שלח הודעה בוואטסאפ
                 </a>
             </div>
+            <a href="https://www.facebook.com/share/r/1Dcaxc4dSs/" target="_blank" rel="noopener" class="hero-waze-explain">
+                <span class="hero-waze-explain-icon">&#9654;</span>
+                מה זה פגישת תכנון "WAZE"? צפו בסרטון הסבר קצר
+            </a>
             <div class="hero-stats">
                 <div class="hero-stat">
                     <span class="hero-stat-num" data-count="2014">2014</span>
