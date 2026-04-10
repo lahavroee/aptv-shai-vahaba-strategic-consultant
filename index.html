@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APT-V | שי והבה — יועץ אסטרטגי לנדל"ן והשקעות</title>
+    <meta name="description" content="APT-V בית השקעות לנדל"ן וליווי פיננסי. שי והבה — מנטור נדל"ן, ליווי משקיעים מא׳ עד ת׳. פגישת Waze לתכנון השקעה חכמה.">
+    <meta name="keywords" content="נדל"ן, השקעות, מנטור, חיפה, קריות, התחדשות עירונית, APT-V, שי והבה">
+    <meta property="og:title" content="APT-V | שי והבה — יועץ אסטרטגי לנדל"ן">
+    <meta property="og:description" content="מנטורינג והשקעות נדל"ן. למד להיות משקיע עצמאי עם ניסיון של 10+ שנים בשטח.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="he_IL">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2a3a;
+            --primary-light: #2c3e50;
+            --accent: #c8a45c;
+            --accent-hover: #d4b46e;
+            --accent-dark: #b08d3e;
+            --bg: #f8f6f1;
+            --bg-white: #ffffff;
+            --text: #2c2c2c;
+            --text-light: #6b7280;
+            --text-on-dark: #f0ece4;
+            --border: #e5e0d5;
+            --success: #10b981;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+            --shadow-lg: 0 12px 48px rgba(0,0,0,0.12);
+            --radius: 12px;
+            --radius-lg: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1000;
+            background: rgba(26, 42, 58, 0.95);
+            backdrop-filter: blur(12px);
+            padding: 0 2rem;
+            transition: box-shadow 0.3s;
+        }
+        .navbar.scrolled {
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .navbar-logo-img {
+            height: 44px;
+            width: auto;
+            object-fit: contain;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .navbar-links a {
+            color: var(--text-on-dark);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+        .navbar-links a:hover {
+            color: var(--accent);
+        }
+        .navbar-cta {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.5rem 1.4rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .navbar-cta:hover {
+            background: var(--accent-hover);
+        }
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        .mobile-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #fff;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1c2e 50%, #1a2a3a 100%);
+            overflow: hidden;
+            padding: 6rem 2rem 4rem;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(200, 164, 92, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 164, 92, 0.05) 0%, transparent 40%);
+            animation: heroGlow 15s ease-in-out infinite alternate;
+        }
+        @keyframes heroGlow {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-5%, 5%); }
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(200, 164, 92, 0.15);
+            border: 1px solid rgba(200, 164, 92, 0.3);
+            color: var(--accent);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        .hero h1 .accent {
+            color: var(--accent);
+        }
+        .hero-sub {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--text-on-dark);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            border-radius: 10px;
+            font-family: 'Heebo', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(200, 164, 92, 0.3);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .btn-whatsapp {
+            background: #25D366;
+            color: #fff;
+        }
+        .btn-whatsapp:hover {
+            background: #20bd5a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-num {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+        .hero-stat-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            font-weight: 300;
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 5rem 2rem;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-label {
+            display: inline-block;
+            color: var(--accent-dark);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            max-width: 650px;
+            line-height: 1.8;
+        }
+
+        /* ===== PROBLEM/SOLUTION ===== */
+        .problem-solution {
+            background: var(--bg-white);
+        }
+        .ps-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        .ps-card {
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            position: relative;
+        }
+        .ps-card.problem {
+            background: linear-gradient(135deg, #fef2f2, #fff5f5);
+            border: 1px solid #fecaca;
+        }
+        .ps-card.solution {
+            background: linear-gradient(135deg, #f0fdf4, #f5fff9);
+            border: 1px solid #bbf7d0;
+        }
+        .ps-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .ps-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .ps-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .ps-card ul li {
+            padding-right: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .ps-card.problem ul li::before {
+            content: '✕';
+            position: absolute;
+            right: 0;
+            color: #ef4444;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+        .ps-card.solution ul li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: #22c55e;
+            font-weight: 700;
+        }
+
+        /* ===== SERVICES ===== */
+        .services {
+            background: var(--bg);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .service-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 0;
+            background: var(--accent);
+            transition: height 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+        .service-card:hover::before {
+            height: 100%;
+        }
+        .service-icon {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: rgba(200, 164, 92, 0.1);
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+        .service-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.6rem;
+        }
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ===== WAZE MEETING ===== */
+        .waze-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1c2e 100%);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .waze-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(200, 164, 92, 0.1) 0%, transparent 50%);
+        }
+        .waze-content {
+            position: relative;
+            z-index: 2;
+        }
+        .waze-section .section-label {
+            color: var(--accent);
+        }
+        .waze-section .section-title {
+            color: #fff;
+        }
+        .waze-section .section-desc {
+            color: rgba(255,255,255,0.7);
+        }
+        .waze-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .waze-step {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .waze-step:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+        .waze-step-num {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin: 0 auto 1.2rem;
+        }
+        .waze-step h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: #fff;
+        }
+        .waze-step p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+        }
+        .waze-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* ===== ABOUT ===== */
+        .about {
+            background: var(--bg-white);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+        .about-visual {
+            position: relative;
+        }
+        .about-photo {
+            width: 100%;
+            aspect-ratio: 4/5;
+            border-radius: var(--radius-lg);
+            object-fit: cover;
+            object-position: center top;
+        }
+        .about-exp-badge {
+            position: absolute;
+            bottom: -1rem;
+            left: -1rem;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 1.2rem;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+        .about-exp-badge .num {
+            font-size: 2rem;
+            font-weight: 800;
+            display: block;
+            line-height: 1;
+        }
+        .about-exp-badge .label {
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .about-text h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .about-highlight {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+        .about-highlight-icon {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+        .about-highlight span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        /* ===== NUMBERS ===== */
+        .numbers {
+            background: var(--bg);
+        }
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .number-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .number-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent);
+        }
+        .number-card .num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-dark);
+            display: block;
+            line-height: 1.2;
+        }
+        .number-card .label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.3rem;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            background: var(--bg-white);
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .testimonial-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            position: relative;
+        }
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--accent);
+            opacity: 0.3;
+            position: absolute;
+            top: 0.5rem;
+            right: 1.5rem;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        .testimonial-card p {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+        .testimonial-role {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* ===== SOCIAL MEDIA ===== */
+        .social-media {
+            background: var(--bg);
+        }
+        .social-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .social-card {
+            display: flex;
+            flex-direction: column;
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
+        }
+        .social-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+        .social-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .social-card-platform {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+        .social-card-arrow {
+            color: var(--accent);
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+        .social-card:hover .social-card-arrow {
+            transform: translateX(-4px);
+        }
+        .social-card-body {
+            flex: 1;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+        .social-card-icon-big {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .social-card-body h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.4rem;
+        }
+        .social-card-body p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        .social-card-footer {
+            padding: 0.8rem 1.5rem;
+            background: var(--bg);
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+        }
+
+        /* ===== CONTACT / LEAD FORM ===== */
+        .contact {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1c2e 100%);
+            color: #fff;
+            position: relative;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        .contact-info .section-label {
+            color: var(--accent);
+        }
+        .contact-info .section-title {
+            color: #fff;
+        }
+        .contact-info p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        .contact-method:hover {
+            color: var(--accent);
+        }
+        .contact-method-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .form-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+        .form-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        .form-card .form-sub {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 0.3rem;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: 'Heebo', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text);
+            background: var(--bg);
+            transition: border-color 0.2s;
+            direction: rtl;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            margin-bottom: 0.75rem;
+        }
+        .form-checkbox input[type="checkbox"] {
+            margin-top: 4px;
+            accent-color: var(--accent);
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+        .form-checkbox label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            cursor: pointer;
+        }
+        .form-checkbox label a {
+            color: var(--accent-dark);
+            text-decoration: underline;
+        }
+        .form-legal {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            padding: 0.75rem;
+            background: var(--bg);
+            border-radius: 8px;
+        }
+        .form-submit {
+            width: 100%;
+            padding: 0.9rem;
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            border-radius: 10px;
+            font-family: 'Heebo', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+        .form-submit:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(200, 164, 92, 0.3);
+        }
+        .form-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #0a1520;
+            color: rgba(255,255,255,0.5);
+            padding: 2rem;
+            text-align: center;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        .footer p {
+            font-size: 0.8rem;
+        }
+
+        /* ===== FLOATING WHATSAPP ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            transition: all 0.3s;
+            animation: whatsappPulse 2s infinite;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+        }
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: #fff;
+        }
+        @keyframes whatsappPulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6); }
+        }
+
+        /* ===== COOKIE BANNER ===== */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: var(--primary);
+            color: #fff;
+            padding: 1rem 2rem;
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+        }
+        .cookie-banner.show {
+            display: flex;
+        }
+        .cookie-banner p {
+            max-width: 600px;
+        }
+        .cookie-banner a {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        .cookie-btns {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .cookie-btn {
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            font-family: 'Heebo', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: 0.2s;
+        }
+        .cookie-accept {
+            background: var(--accent);
+            color: var(--primary);
+        }
+        .cookie-decline {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* ===== SUCCESS MESSAGE ===== */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        .form-success.show {
+            display: block;
+        }
+        .form-success-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .form-success h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .form-success p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .ps-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .waze-steps {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .numbers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-stats {
+                gap: 1.5rem;
+            }
+            .about-visual {
+                order: -1;
+            }
+            .about-placeholder {
+                aspect-ratio: 16/9;
+            }
+        }
+        @media (max-width: 768px) {
+            .navbar-links {
+                display: none;
+                position: absolute;
+                top: 68px;
+                right: 0;
+                left: 0;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                gap: 1rem;
+            }
+            .navbar-links.active {
+                display: flex;
+            }
+            .navbar-cta {
+                display: none;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+            section {
+                padding: 3.5rem 1.5rem;
+            }
+            .hero {
+                padding: 5rem 1.5rem 3rem;
+            }
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            .numbers-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+            .about-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="#" class="navbar-logo">
+                <img src="images/aptv-logo.png" alt="APT-V Logo" class="navbar-logo-img">
+            </a>
+            <ul class="navbar-links" id="navLinks">
+                <li><a href="#services">שירותים</a></li>
+                <li><a href="#waze-meeting">פגישת Waze</a></li>
+                <li><a href="#about">אודות</a></li>
+                <li><a href="#contact">צור קשר</a></li>
+            </ul>
+            <a href="#contact" class="navbar-cta">קבע פגישת ייעוץ</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="תפריט">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">מנטור נדל"ן | יועץ אסטרטגי</div>
+            <h1>
+                תהפוך למשקיע נדל"ן<br>
+                <span class="accent">עצמאי ומקצועי</span>
+            </h1>
+            <p class="hero-sub">
+                שי והבה, מייסד APT-V, מלווה משקיעים עם ניסיון של למעלה מעשור בשטח — מישראל ועד ניו יורק. קבל את הכלים, הידע והביטחון לפעול בעולם הנדל"ן בכוחות עצמך.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+                    קבע פגישת Waze
+                </a>
+                <a href="https://wa.me/972507752725?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%9E%D7%A0%D7%98%D7%95%D7%A8%D7%99%D7%A0%D7%92%20%D7%A0%D7%93%D7%9C%22%D7%9F" class="btn btn-whatsapp" target="_blank" rel="noopener">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    שלח הודעה בוואטסאפ
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-count="2014">2014</span>
+                    <span class="hero-stat-label">פעילים מאז</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num">100+</span>
+                    <span class="hero-stat-label">משקיעים שלוו</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num">4</span>
+                    <span class="hero-stat-label">מדינות פעילות</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM / SOLUTION -->
+    <section class="problem-solution" id="problem-solution">
+        <div class="section-inner">
+            <div style="text-align: center; margin-bottom: 1rem;">
+                <span class="section-label">למה מנטורינג?</span>
+                <h2 class="section-title">השקעת נדל"ן בלי ידע — זה כמו נסיעה בלי Waze</h2>
+            </div>
+            <div class="ps-grid">
+                <div class="ps-card problem">
+                    <div class="ps-card-icon">&#9888;</div>
+                    <h3>בלי הכוונה מקצועית</h3>
+                    <ul>
+                        <li>תלות מוחלטת במתווכים שהאינטרס שלהם שונה משלך</li>
+                        <li>חוסר הבנה של תנאי המשכנתא ואפשרויות המימון</li>
+                        <li>רכישה באזורים "חמים" בלי לבדוק את הפוטנציאל האמיתי</li>
+                        <li>חשיפה לסיכונים שלא ידעת שקיימים</li>
+                    </ul>
+                </div>
+                <div class="ps-card solution">
+                    <div class="ps-card-icon">&#10004;</div>
+                    <h3>עם ליווי של APT-V</h3>
+                    <ul>
+                        <li>עצמאות מלאה — אתה מבין כל שלב בתהליך</li>
+                        <li>שליטה מול בנקאים, עורכי דין ומתווכים</li>
+                        <li>המלצות רק על אזורים שבהם שי מושקע בעצמו</li>
+                        <li>מפת דרכים ברורה עם תקציב, סיכונים ואזורים מומלצים</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-inner">
+            <span class="section-label">מה אנחנו עושים</span>
+            <h2 class="section-title">שירותי APT-V</h2>
+            <p class="section-desc">ליווי מקצועי מא' ועד ת' — מהרגע שאתה חושב על השקעה ועד שהנכס מניב לך הכנסה פסיבית.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">&#127891;</div>
+                    <h3>מנטורינג נדל"ן</h3>
+                    <p>הכשרה מקיפה להפוך למשקיע עצמאי. תלמד להבין את השוק, לנתח עסקאות ולקבל החלטות מושכלות.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#128269;</div>
+                    <h3>איתור נכסים</h3>
+                    <p>זיהוי נכסים עם פוטנציאל השבחה גבוה באזורי התחדשות עירונית — תמ"א 38, פינוי-בינוי ותאי שטח מתפתחים.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#128176;</div>
+                    <h3>ליווי פיננסי</h3>
+                    <p>בניית תוכנית מימון מותאמת אישית, ניתוח יכולת כלכלית, בחירת מסלול משכנתא והתנהלות מול המערכת הבנקאית.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#127968;</div>
+                    <h3>ניהול נכסים</h3>
+                    <p>ניהול שוטף של הנכס — שיפוץ, עיצוב ברמה גבוהה, מציאת שוכרים איכותיים ותחזוקה שוטפת. פסיביות מלאה.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WAZE MEETING -->
+    <section class="waze-section" id="waze-meeting">
+        <div class="section-inner waze-content">
+            <div style="text-align: center;">
+                <span class="section-label">השירות שלנו</span>
+                <h2 class="section-title">פגישת Waze — מפת הדרכים שלך</h2>
+                <p class="section-desc" style="margin: 0 auto 1rem;">פגישת אפיון מעמיקה של כ-3 שעות, שבסופה תצא עם תמונה ברורה ומדויקת של הדרך להשקעה הבאה שלך.</p>
+            </div>
+            <div class="waze-steps">
+                <div class="waze-step">
+                    <div class="waze-step-num">1</div>
+                    <h3>יכולת כלכלית</h3>
+                    <p>הגדרה מדויקת של התקציב שלך — עד איזה גובה אפשר לרכוש נכס, מה ההחזר החודשי ומה קורה בתרחיש הגרוע ביותר.</p>
+                </div>
+                <div class="waze-step">
+                    <div class="waze-step-num">2</div>
+                    <h3>אזורים מומלצים</h3>
+                    <p>המלצות על רחובות ואזורים ספציפיים — רק מקומות שבהם שי מושקע בעצמו ומכיר כל פינה מהשטח.</p>
+                </div>
+                <div class="waze-step">
+                    <div class="waze-step-num">3</div>
+                    <h3>מסלול השקעה</h3>
+                    <p>התאמה אישית — דירה בפרויקט חדש (פריסייל), השקעה סולידית בנכס קיים, או התחדשות עירונית עם פוטנציאל גבוה.</p>
+                </div>
+            </div>
+            <div class="waze-cta">
+                <a href="#contact" class="btn btn-primary" style="font-size:1.1rem; padding: 1rem 2.5rem;">
+                    קבע את פגישת ה-Waze שלך
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="section-inner">
+            <div class="about-grid">
+                <div class="about-visual">
+                    <img src="images/shai-vahaba.jpg" alt="שי והבה — מייסד APT-V" class="about-photo">
+                    <div class="about-exp-badge">
+                        <span class="num">10+</span>
+                        <span class="label">שנות ניסיון</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <span class="section-label">הסיפור שלנו</span>
+                    <h3>שי והבה — מייסד APT-V</h3>
+                    <p>
+                        שי התחיל את דרכו בנדל"ן מאיתור עצמאי של נכסים — דפיקה על דלתות, שבירת שיניים מול המערכת הבנקאית, ולמידה מעשית של הפן המשפטי. עם השנים צבר מומחיות ייחודית בהתחדשות עירונית וזיהוי תאי שטח עם פוטנציאל השבחה גבוה.
+                    </p>
+                    <p>
+                        הניסיון שלו אינו מוגבל לישראל — שי רכש, שיפץ וניהל נכסים בהצלחה בניו יורק, תאילנד וקוסטה ריקה. כיום, לאחר שליווה למעלה מ-100 משקיעים, שי מתמקד במנטורינג — להכשיר אנשים להיות משקיעי נדל"ן עצמאים ומקצועיים.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="about-highlight">
+                            <span class="about-highlight-icon">&#10003;</span>
+                            <span>התמחות בהתחדשות עירונית</span>
+                        </div>
+                        <div class="about-highlight">
+                            <span class="about-highlight-icon">&#10003;</span>
+                            <span>ניסיון בינלאומי ב-4 מדינות</span>
+                        </div>
+                        <div class="about-highlight">
+                            <span class="about-highlight-icon">&#10003;</span>
+                            <span>ממליץ רק על אזורים שמושקע בהם</span>
+                        </div>
+                        <div class="about-highlight">
+                            <span class="about-highlight-icon">&#10003;</span>
+                            <span>ליווי אישי ובוטיקי</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUMBERS -->
+    <section class="numbers" id="numbers">
+        <div class="section-inner">
+            <div style="text-align: center;">
+                <span class="section-label">במספרים</span>
+                <h2 class="section-title">הניסיון מדבר בעד עצמו</h2>
+            </div>
+            <div class="numbers-grid">
+                <div class="number-card">
+                    <span class="num">2014</span>
+                    <span class="label">שנת הקמה</span>
+                </div>
+                <div class="number-card">
+                    <span class="num">100+</span>
+                    <span class="label">משקיעים שלוו</span>
+                </div>
+                <div class="number-card">
+                    <span class="num">4</span>
+                    <span class="label">מדינות פעילות</span>
+                </div>
+                <div class="number-card">
+                    <span class="num">100%</span>
+                    <span class="label">פסיביות למשקיע</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-inner">
+            <div style="text-align: center;">
+                <span class="section-label">מה אומרים עלינו</span>
+                <h2 class="section-title">משקיעים שעברו את הדרך</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>הגעתי לשי בלי שום ידע בנדל"ן. אחרי פגישת ה-Waze הרגשתי שאני מבין בדיוק מה הצעד הבא שלי. היום יש לי שני נכסים מניבים ואני מנהל אותם לבד.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">מ.ר</div>
+                        <div>
+                            <div class="testimonial-name">מ.ר</div>
+                            <div class="testimonial-role">משקיע נדל"ן, חיפה</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>מה שמיוחד בשי הוא שהוא ממליץ רק על מקומות שהוא עצמו מושקע בהם. זה נותן ביטחון אדיר. הוא לא מתווך — הוא שותף לדרך.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">ד.כ</div>
+                        <div>
+                            <div class="testimonial-name">ד.כ</div>
+                            <div class="testimonial-role">משקיעה, קריות</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>הליווי הפיננסי של APT-V חסך לי עשרות אלפי שקלים במשכנתא. שי הבין את המצב שלי ובנה תוכנית שפשוט עבדה.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">א.ש</div>
+                        <div>
+                            <div class="testimonial-name">א.ש</div>
+                            <div class="testimonial-role">משקיע נדל"ן, מרכז</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL MEDIA -->
+    <section class="social-media" id="social-media">
+        <div class="section-inner">
+            <div style="text-align: center;">
+                <span class="section-label">עקבו אחרינו</span>
+                <h2 class="section-title">תוכן, טיפים ועדכונים מהשטח</h2>
+                <p class="section-desc" style="margin: 0 auto 2.5rem;">שי משתף ברשתות החברתיות תובנות, עסקאות ושיעורים מעולם הנדל"ן — עקבו כדי להישאר מעודכנים.</p>
+            </div>
+            <div class="social-cards">
+                <a href="https://www.instagram.com/reel/DWWVz1dlGdS/?igsh=MXQ4end6eDY3dmN3aw==" class="social-card" target="_blank" rel="noopener">
+                    <div class="social-card-header">
+                        <div class="social-card-platform">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <span>Instagram</span>
+                        </div>
+                        <span class="social-card-arrow">&larr;</span>
+                    </div>
+                    <div class="social-card-body">
+                        <div class="social-card-icon-big">&#127916;</div>
+                        <h3>צפו ב-Reel האחרון</h3>
+                        <p>טיפים ותובנות מעולם הנדל"ן — ישר מהשטח</p>
+                    </div>
+                    <div class="social-card-footer">
+                        <span>לצפייה באינסטגרם</span>
+                    </div>
+                </a>
+                <a href="https://www.facebook.com/share/v/1Kvt63AjLk/?mibextid=wwXIfr" class="social-card" target="_blank" rel="noopener">
+                    <div class="social-card-header">
+                        <div class="social-card-platform">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            <span>Facebook</span>
+                        </div>
+                        <span class="social-card-arrow">&larr;</span>
+                    </div>
+                    <div class="social-card-body">
+                        <div class="social-card-icon-big">&#127909;</div>
+                        <h3>סרטון חדש בפייסבוק</h3>
+                        <p>שי משתף ניסיון מעשי מעולם ההשקעות</p>
+                    </div>
+                    <div class="social-card-footer">
+                        <span>לצפייה בפייסבוק</span>
+                    </div>
+                </a>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://www.instagram.com/aptvinvest/" class="btn btn-outline" style="color: var(--primary); border-color: var(--border);" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    עקבו באינסטגרם
+                </a>
+                <a href="https://www.facebook.com/aptvinvest/" class="btn btn-outline" style="color: var(--primary); border-color: var(--border);" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    עקבו בפייסבוק
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / LEAD FORM -->
+    <section class="contact" id="contact">
+        <div class="section-inner">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-label">בואו נדבר</span>
+                    <h2 class="section-title">מוכנים לצעד הראשון?</h2>
+                    <p>השאירו פרטים ונחזור אליכם תוך 24 שעות לתיאום פגישת Waze — בלי התחייבות.</p>
+                    <div class="contact-methods">
+                        <a href="https://wa.me/972507752725" class="contact-method" target="_blank" rel="noopener">
+                            <div class="contact-method-icon">&#128172;</div>
+                            <span>050-775-2725 — וואטסאפ</span>
+                        </a>
+                        <a href="tel:+972507752725" class="contact-method">
+                            <div class="contact-method-icon">&#128222;</div>
+                            <span>050-775-2725 — חייגו עכשיו</span>
+                        </a>
+                        <a href="mailto:SHAISPC@GMAIL.COM" class="contact-method">
+                            <div class="contact-method-icon">&#9993;</div>
+                            <span>SHAISPC@GMAIL.COM</span>
+                        </a>
+                        <div class="contact-method">
+                            <div class="contact-method-icon">&#128205;</div>
+                            <span>קריית מוצקין, אזור חיפה והקריות</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-card">
+                        <h3>השאירו פרטים</h3>
+                        <p class="form-sub">ונחזור אליכם בהקדם</p>
+                        <form id="leadForm">
+                            <div class="form-group">
+                                <label for="name">שם מלא *</label>
+                                <input type="text" id="name" name="name" required placeholder="השם שלך">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">טלפון *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="050-000-0000" dir="ltr" style="text-align: right;">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">אימייל (אופציונלי)</label>
+                                <input type="email" id="email" name="email" placeholder="email@example.com" dir="ltr" style="text-align: right;">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">במה נוכל לעזור?</label>
+                                <textarea id="message" name="message" placeholder="ספרו לנו קצת על עצמכם ומה אתם מחפשים..."></textarea>
+                            </div>
+                            <div class="form-legal">
+                                המידע נאסף על ידי APT-V בית השקעות לנדל"ן (שי והבה), לצורך יצירת קשר ומתן שירותי ייעוץ בנדל"ן. מסירת הפרטים היא מרצונך החופשי. עומדת לך זכות לעיין במידע ולבקש את מחיקתו. לפניות בנושא פרטיות: privacy@apt-v.co.il
+                            </div>
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="privacy" required>
+                                <label for="privacy">קראתי ואני מסכים/ה ל<a href="#privacy-policy">מדיניות הפרטיות</a> *</label>
+                            </div>
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="marketing">
+                                <label for="marketing">אני מאשר/ת קבלת הודעות בוואטסאפ ובמייל מ-APT-V</label>
+                            </div>
+                            <button type="submit" class="form-submit" id="submitBtn">שלחו ואני אחזור אליכם</button>
+                        </form>
+                        <div class="form-success" id="formSuccess">
+                            <div class="form-success-icon">&#10004;&#65039;</div>
+                            <h3>הפרטים התקבלו!</h3>
+                            <p>תודה רבה. נחזור אליך בהקדם האפשרי.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <a href="#" class="navbar-logo"><img src="images/aptv-logo.png" alt="APT-V" class="navbar-logo-img" style="height:36px; filter: brightness(0) invert(1);"></a>
+            <div class="footer-links">
+                <a href="#services">שירותים</a>
+                <a href="#waze-meeting">פגישת Waze</a>
+                <a href="#about">אודות</a>
+                <a href="#contact">צור קשר</a>
+                <a href="https://www.instagram.com/aptvinvest/" target="_blank" rel="noopener">אינסטגרם</a>
+                <a href="https://www.facebook.com/aptvinvest/" target="_blank" rel="noopener">פייסבוק</a>
+                <a href="#privacy-policy">מדיניות פרטיות</a>
+            </div>
+            <p>&copy; 2024–2026 APT-V בית השקעות לנדל"ן וליווי פיננסי. כל הזכויות שמורות.</p>
+            <p style="font-size:0.7rem; margin-top: 0.25rem;">
+                לפניות בנושא פרטיות: <a href="mailto:privacy@apt-v.co.il" style="color: var(--accent);">privacy@apt-v.co.il</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/972507752725?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%20APT-V" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- COOKIE BANNER -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>אתר זה משתמש בקוקיז לצורך שיפור חווית המשתמש. <a href="#privacy-policy">מדיניות פרטיות</a></p>
+        <div class="cookie-btns">
+            <button class="cookie-btn cookie-decline" onclick="handleCookies('decline')">דחייה</button>
+            <button class="cookie-btn cookie-accept" onclick="handleCookies('accept')">אישור</button>
+        </div>
+    </div>
+
+    <script>
+        // ===== NAVBAR SCROLL =====
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // ===== MOBILE MENU =====
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => navLinks.classList.remove('active'));
+        });
+
+        // ===== FORM HANDLING =====
+        const leadForm = document.getElementById('leadForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formSuccess = document.getElementById('formSuccess');
+
+        leadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Basic validation
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const privacy = document.getElementById('privacy').checked;
+
+            if (!name || !phone || !privacy) return;
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'שולח...';
+
+            // Simulate form submission (replace with actual endpoint)
+            setTimeout(() => {
+                leadForm.style.display = 'none';
+                formSuccess.classList.add('show');
+            }, 1000);
+        });
+
+        // ===== COOKIE BANNER =====
+        function handleCookies(choice) {
+            localStorage.setItem('cookieConsent', choice);
+            document.getElementById('cookieBanner').classList.remove('show');
+        }
+
+        if (!localStorage.getItem('cookieConsent')) {
+            setTimeout(() => {
+                document.getElementById('cookieBanner').classList.add('show');
+            }, 2000);
+        }
+
+        // ===== SMOOTH SCROLL FOR ALL ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .waze-step, .number-card, .testimonial-card, .ps-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
