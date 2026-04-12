@@ -12,7 +12,7 @@
     <meta property="og:locale" content="he_IL">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Raleway:wght@200;300&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1a2a3a;
@@ -104,10 +104,49 @@
             align-items: center;
             text-decoration: none;
         }
-        .navbar-logo-svg {
-            height: 46px;
-            width: auto;
-            border-radius: 10px;
+        .logo-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 5px 14px 6px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+            gap: 0;
+            line-height: 1;
+        }
+        .logo-chart-svg {
+            width: 100px;
+            height: 32px;
+            display: block;
+            margin-bottom: -2px;
+        }
+        .logo-text-row {
+            display: flex;
+            align-items: baseline;
+            gap: 0;
+            line-height: 1;
+        }
+        .logo-apt {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 200;
+            font-size: 1.55rem;
+            color: #1a1a1a;
+            letter-spacing: 3px;
+        }
+        .logo-dash {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 200;
+            font-size: 1.55rem;
+            color: #1a1a1a;
+            margin: 0 1px;
+        }
+        .logo-v {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 200;
+            font-size: 1.55rem;
+            color: #2e7d32;
+            letter-spacing: 0;
         }
         .navbar-links {
             display: flex;
@@ -1200,46 +1239,26 @@
     <nav class="navbar" id="navbar" role="navigation" aria-label="ניווט ראשי">
         <div class="navbar-inner">
             <a href="#" class="navbar-logo" aria-label="APT-V דף הבית">
-                <svg class="navbar-logo-svg" viewBox="0 0 560 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="APT-V לוגו">
-                    <title>APT-V</title>
-                    <!-- White rounded background -->
-                    <rect x="0" y="0" width="560" height="310" rx="18" ry="18" fill="#ffffff"/>
-                    <!-- Chart line: gray zigzag (exact match original) -->
-                    <polyline points="55,228 118,125 200,170 305,62"
-                        stroke="#a0a0a0" stroke-width="10"
-                        fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <!-- Green arrow shaft -->
-                    <line x1="305" y1="62" x2="340" y2="28"
-                        stroke="#2e7d32" stroke-width="10" stroke-linecap="round"/>
-                    <!-- Green arrowhead (open, two lines from tip) -->
-                    <polyline points="305,28 340,28 340,62"
-                        stroke="#2e7d32" stroke-width="8"
-                        fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <!-- A (dark charcoal) -->
-                    <polyline points="28,285 80,162 132,285"
-                        stroke="#1a1a1a" stroke-width="10"
-                        fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="47" y1="242" x2="113" y2="242"
-                        stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
-                    <!-- P -->
-                    <line x1="152" y1="285" x2="152" y2="162"
-                        stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
-                    <path d="M152,162 L208,162 Q236,162 236,200 Q236,238 208,238 L152,238"
-                        stroke="#1a1a1a" stroke-width="10"
-                        fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <!-- T -->
-                    <line x1="256" y1="162" x2="352" y2="162"
-                        stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
-                    <line x1="304" y1="162" x2="304" y2="285"
-                        stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
-                    <!-- Dash -->
-                    <line x1="368" y1="228" x2="400" y2="228"
-                        stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
-                    <!-- V (green) -->
-                    <polyline points="416,162 468,285 520,162"
-                        stroke="#2e7d32" stroke-width="10"
-                        fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <div class="logo-box">
+                    <!-- Chart SVG only -->
+                    <svg class="logo-chart-svg" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <!-- Gray zigzag chart line -->
+                        <polyline points="10,72 55,32 95,52 175,8"
+                            stroke="#aaaaaa" stroke-width="7"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Green arrow shaft -->
+                        <line x1="175" y1="8" x2="200" y2="2"
+                            stroke="#2e7d32" stroke-width="7" stroke-linecap="round"/>
+                        <!-- Green arrowhead (open bracket) -->
+                        <polyline points="174,2 200,2 200,26"
+                            stroke="#2e7d32" stroke-width="5.5"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <!-- Text row -->
+                    <div class="logo-text-row">
+                        <span class="logo-apt">APT</span><span class="logo-dash">-</span><span class="logo-v">V</span>
+                    </div>
+                </div>
             </a>
             <ul class="navbar-links" id="navLinks" role="list">
                 <li><a href="#services">שירותים</a></li>
@@ -1627,21 +1646,16 @@
     <footer class="footer" role="contentinfo">
         <div class="footer-inner">
             <a href="#" class="navbar-logo" style="justify-content:center;" aria-label="APT-V דף הבית">
-                <svg style="height:38px; border-radius:8px;" viewBox="0 0 560 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="APT-V לוגו">
-                    <title>APT-V</title>
-                    <rect x="0" y="0" width="560" height="310" rx="18" ry="18" fill="#ffffff"/>
-                    <polyline points="55,228 118,125 200,170 305,62" stroke="#a0a0a0" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="305" y1="62" x2="340" y2="28" stroke="#2e7d32" stroke-width="10" stroke-linecap="round"/>
-                    <polyline points="305,28 340,28 340,62" stroke="#2e7d32" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <polyline points="28,285 80,162 132,285" stroke="#1a1a1a" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="47" y1="242" x2="113" y2="242" stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
-                    <line x1="152" y1="285" x2="152" y2="162" stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
-                    <path d="M152,162 L208,162 Q236,162 236,200 Q236,238 208,238 L152,238" stroke="#1a1a1a" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="256" y1="162" x2="352" y2="162" stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
-                    <line x1="304" y1="162" x2="304" y2="285" stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
-                    <line x1="368" y1="228" x2="400" y2="228" stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
-                    <polyline points="416,162 468,285 520,162" stroke="#2e7d32" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <div class="logo-box" style="opacity:0.9;">
+                    <svg class="logo-chart-svg" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <polyline points="10,72 55,32 95,52 175,8" stroke="#aaaaaa" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="175" y1="8" x2="200" y2="2" stroke="#2e7d32" stroke-width="7" stroke-linecap="round"/>
+                        <polyline points="174,2 200,2 200,26" stroke="#2e7d32" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div class="logo-text-row">
+                        <span class="logo-apt">APT</span><span class="logo-dash">-</span><span class="logo-v">V</span>
+                    </div>
+                </div>
             </a>
             <div class="footer-links">
                 <a href="#services">שירותים</a>
