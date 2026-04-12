@@ -105,8 +105,9 @@
             text-decoration: none;
         }
         .navbar-logo-svg {
-            height: 48px;
+            height: 46px;
             width: auto;
+            border-radius: 10px;
         }
         .navbar-links {
             display: flex;
@@ -1199,43 +1200,44 @@
     <nav class="navbar" id="navbar" role="navigation" aria-label="ניווט ראשי">
         <div class="navbar-inner">
             <a href="#" class="navbar-logo" aria-label="APT-V דף הבית">
-                <svg class="navbar-logo-svg" viewBox="0 0 520 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="APT-V לוגו">
+                <svg class="navbar-logo-svg" viewBox="0 0 560 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="APT-V לוגו">
                     <title>APT-V</title>
-                    <!-- Chart line: gray zigzag -->
-                    <polyline points="45,218 105,118 188,162 292,58"
-                        stroke="rgba(255,255,255,0.55)" stroke-width="11"
+                    <!-- White rounded background -->
+                    <rect x="0" y="0" width="560" height="310" rx="18" ry="18" fill="#ffffff"/>
+                    <!-- Chart line: gray zigzag (exact match original) -->
+                    <polyline points="55,228 118,125 200,170 305,62"
+                        stroke="#a0a0a0" stroke-width="10"
                         fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <!-- Green arrow line -->
-                    <line x1="292" y1="58" x2="332" y2="24"
-                        stroke="#2e9e50" stroke-width="11"
-                        stroke-linecap="round"/>
-                    <!-- Green arrowhead -->
-                    <polyline points="298,22 334,22 334,58"
-                        stroke="#2e9e50" stroke-width="9"
+                    <!-- Green arrow shaft -->
+                    <line x1="305" y1="62" x2="340" y2="28"
+                        stroke="#2e7d32" stroke-width="10" stroke-linecap="round"/>
+                    <!-- Green arrowhead (open, two lines from tip) -->
+                    <polyline points="305,28 340,28 340,62"
+                        stroke="#2e7d32" stroke-width="8"
                         fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <!-- A -->
-                    <polyline points="22,270 72,152 122,270"
-                        stroke="#ffffff" stroke-width="11"
+                    <!-- A (dark charcoal) -->
+                    <polyline points="28,285 80,162 132,285"
+                        stroke="#1a1a1a" stroke-width="10"
                         fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="40" y1="228" x2="104" y2="228"
-                        stroke="#ffffff" stroke-width="11" stroke-linecap="round"/>
+                    <line x1="47" y1="242" x2="113" y2="242"
+                        stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
                     <!-- P -->
-                    <line x1="140" y1="270" x2="140" y2="152"
-                        stroke="#ffffff" stroke-width="11" stroke-linecap="round"/>
-                    <path d="M140,152 L196,152 Q222,152 222,188 Q222,224 196,224 L140,224"
-                        stroke="#ffffff" stroke-width="11"
+                    <line x1="152" y1="285" x2="152" y2="162"
+                        stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
+                    <path d="M152,162 L208,162 Q236,162 236,200 Q236,238 208,238 L152,238"
+                        stroke="#1a1a1a" stroke-width="10"
                         fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                     <!-- T -->
-                    <line x1="240" y1="152" x2="328" y2="152"
-                        stroke="#ffffff" stroke-width="11" stroke-linecap="round"/>
-                    <line x1="284" y1="152" x2="284" y2="270"
-                        stroke="#ffffff" stroke-width="11" stroke-linecap="round"/>
+                    <line x1="256" y1="162" x2="352" y2="162"
+                        stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
+                    <line x1="304" y1="162" x2="304" y2="285"
+                        stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
                     <!-- Dash -->
-                    <line x1="344" y1="216" x2="374" y2="216"
-                        stroke="#ffffff" stroke-width="11" stroke-linecap="round"/>
+                    <line x1="368" y1="228" x2="400" y2="228"
+                        stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
                     <!-- V (green) -->
-                    <polyline points="388,152 438,270 488,152"
-                        stroke="#2e9e50" stroke-width="11"
+                    <polyline points="416,162 468,285 520,162"
+                        stroke="#2e7d32" stroke-width="10"
                         fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </a>
@@ -1625,19 +1627,20 @@
     <footer class="footer" role="contentinfo">
         <div class="footer-inner">
             <a href="#" class="navbar-logo" style="justify-content:center;" aria-label="APT-V דף הבית">
-                <svg style="height:34px;" viewBox="0 0 520 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="APT-V לוגו">
+                <svg style="height:38px; border-radius:8px;" viewBox="0 0 560 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="APT-V לוגו">
                     <title>APT-V</title>
-                    <polyline points="45,218 105,118 188,162 292,58" stroke="rgba(255,255,255,0.35)" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="292" y1="58" x2="332" y2="24" stroke="#2e9e50" stroke-width="11" stroke-linecap="round"/>
-                    <polyline points="298,22 334,22 334,58" stroke="#2e9e50" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <polyline points="22,270 72,152 122,270" stroke="rgba(255,255,255,0.45)" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="40" y1="228" x2="104" y2="228" stroke="rgba(255,255,255,0.45)" stroke-width="11" stroke-linecap="round"/>
-                    <line x1="140" y1="270" x2="140" y2="152" stroke="rgba(255,255,255,0.45)" stroke-width="11" stroke-linecap="round"/>
-                    <path d="M140,152 L196,152 Q222,152 222,188 Q222,224 196,224 L140,224" stroke="rgba(255,255,255,0.45)" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="240" y1="152" x2="328" y2="152" stroke="rgba(255,255,255,0.45)" stroke-width="11" stroke-linecap="round"/>
-                    <line x1="284" y1="152" x2="284" y2="270" stroke="rgba(255,255,255,0.45)" stroke-width="11" stroke-linecap="round"/>
-                    <line x1="344" y1="216" x2="374" y2="216" stroke="rgba(255,255,255,0.45)" stroke-width="11" stroke-linecap="round"/>
-                    <polyline points="388,152 438,270 488,152" stroke="#2e9e50" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="0" y="0" width="560" height="310" rx="18" ry="18" fill="#ffffff"/>
+                    <polyline points="55,228 118,125 200,170 305,62" stroke="#a0a0a0" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="305" y1="62" x2="340" y2="28" stroke="#2e7d32" stroke-width="10" stroke-linecap="round"/>
+                    <polyline points="305,28 340,28 340,62" stroke="#2e7d32" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="28,285 80,162 132,285" stroke="#1a1a1a" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="47" y1="242" x2="113" y2="242" stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
+                    <line x1="152" y1="285" x2="152" y2="162" stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
+                    <path d="M152,162 L208,162 Q236,162 236,200 Q236,238 208,238 L152,238" stroke="#1a1a1a" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="256" y1="162" x2="352" y2="162" stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
+                    <line x1="304" y1="162" x2="304" y2="285" stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
+                    <line x1="368" y1="228" x2="400" y2="228" stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
+                    <polyline points="416,162 468,285 520,162" stroke="#2e7d32" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </a>
             <div class="footer-links">
