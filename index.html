@@ -10,6 +10,9 @@
     <meta property="og:description" content="מנטורינג והשקעות נדל"ן. למד להיות משקיע עצמאי עם ניסיון של 10+ שנים בשטח.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="he_IL">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a2a3a">
+    <link rel="canonical" href="https://lahavroee.github.io/aptv-shai-vahaba-strategic-consultant/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Raleway:wght@200;300&display=swap" rel="stylesheet">
@@ -1091,6 +1094,30 @@
             50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6); }
         }
 
+        /* ===== ACCESSIBILITY BUTTON ===== */
+        .accessibility-btn {
+            position: fixed;
+            bottom: 5.5rem;
+            left: 1.5rem;
+            z-index: 998;
+            width: 46px;
+            height: 46px;
+            background: #1a2a3a;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+            transition: all 0.2s;
+        }
+        .accessibility-btn:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: scale(1.08);
+        }
+
         /* ===== COOKIE BANNER ===== */
         .cookie-banner {
             position: fixed;
@@ -1587,15 +1614,15 @@
                         <form id="leadForm" aria-label="טופס יצירת קשר" novalidate>
                             <div class="form-group">
                                 <label for="name">שם מלא <abbr title="שדה חובה" aria-label="חובה">*</abbr></label>
-                                <input type="text" id="name" name="name" required placeholder="השם שלך">
+                                <input type="text" id="name" name="name" required autocomplete="name" placeholder="השם שלך">
                             </div>
                             <div class="form-group">
                                 <label for="phone">טלפון <abbr title="שדה חובה" aria-label="חובה">*</abbr></label>
-                                <input type="tel" id="phone" name="phone" required placeholder="050-000-0000" dir="ltr" style="text-align: right;">
+                                <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="050-000-0000" dir="ltr" style="text-align: right;">
                             </div>
                             <div class="form-group">
                                 <label for="email">אימייל (אופציונלי)</label>
-                                <input type="email" id="email" name="email" placeholder="email@example.com" dir="ltr" style="text-align: right;">
+                                <input type="email" id="email" name="email" autocomplete="email" placeholder="email@example.com" dir="ltr" style="text-align: right;">
                             </div>
                             <div class="form-group">
                                 <label for="message">במה נוכל לעזור?</label>
@@ -1642,6 +1669,21 @@
         </div>
     </section>
 
+    <!-- ACCESSIBILITY STATEMENT (SI 5568 חובה) -->
+    <section id="accessibility-statement" style="background:#eef2f5; padding:2.5rem 2rem; border-top:1px solid #dce3ea;" aria-labelledby="access-title">
+        <div style="max-width:800px; margin:0 auto; font-size:0.85rem; color:#4b5563; line-height:1.9;">
+            <h2 id="access-title" style="font-size:1.1rem; font-weight:700; color:#1a2a3a; margin-bottom:1rem;">&#9855; הצהרת נגישות</h2>
+            <p>אנו ב-APT-V מחויבים להנגשת האתר לכלל המשתמשים, לרבות אנשים עם מוגבלויות, בהתאם לתקן הישראלי <strong>SI 5568</strong> ולתקן הבינלאומי <strong>WCAG 2.1 רמה AA</strong>.</p>
+            <p><strong>רמת תאימות:</strong> AA לפי WCAG 2.1 / SI 5568 | <strong>עודכן:</strong> אפריל 2026</p>
+            <p><strong>מה בוצע:</strong> ניווט מקלדת מלא · תמיכה בקוראי מסך (NVDA, JAWS, VoiceOver) · ניגודיות צבעים תקנית · טקסטים חלופיים לתמונות · מבנה כותרות סמנטי · תמיכה ב-RTL מלא · הודעות שגיאה נגישות</p>
+            <p style="margin-top:0.75rem;"><strong>נתקלתם בבעיית נגישות? נשמח לתקן:</strong></p>
+            <div style="margin-top:0.6rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+                <a href="mailto:accessibility@apt-v.co.il" style="display:inline-flex;align-items:center;gap:0.4rem;background:#1a2a3a;color:#fff;padding:0.55rem 1.1rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.82rem;">&#9993; דיווח על בעיית נגישות</a>
+                <a href="tel:+972507752725" style="display:inline-flex;align-items:center;gap:0.4rem;border:1px solid #1a2a3a;color:#1a2a3a;padding:0.55rem 1.1rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.82rem;">&#128222; 050-775-2725</a>
+            </div>
+        </div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="footer" role="contentinfo">
         <div class="footer-inner">
@@ -1665,6 +1707,7 @@
                 <a href="https://www.instagram.com/aptvinvest/" target="_blank" rel="noopener">אינסטגרם</a>
                 <a href="https://www.facebook.com/aptvinvest/" target="_blank" rel="noopener">פייסבוק</a>
                 <a href="#privacy-policy">מדיניות פרטיות</a>
+                <a href="#accessibility-statement">הצהרת נגישות</a>
             </div>
             <p>&copy; 2024–2026 APT-V בית השקעות לנדל"ן וליווי פיננסי. כל הזכויות שמורות.</p>
             <p style="font-size:0.7rem; margin-top: 0.25rem;">
@@ -1675,6 +1718,14 @@
             </p>
         </div>
     </footer>
+
+    <!-- ACCESSIBILITY BUTTON (SI 5568 requirement) -->
+    <a href="#accessibility-statement" class="accessibility-btn" aria-label="הצהרת נגישות ודיווח על בעיה">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <circle cx="12" cy="4" r="2"/>
+            <path d="M19 13h-6l-2-4H7a1 1 0 000 2h3l1.5 3H8l-2 4h2l1.5-3h5l1.5 3h2l-2-4h-.5L19 13z"/>
+        </svg>
+    </a>
 
     <!-- FLOATING WHATSAPP -->
     <a href="https://wa.me/972507752725?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%20APT-V" class="whatsapp-float" target="_blank" rel="noopener" aria-label="פתח שיחת וואטסאפ עם שי והבה">
